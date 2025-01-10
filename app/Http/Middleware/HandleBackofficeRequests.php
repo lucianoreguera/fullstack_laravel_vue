@@ -29,23 +29,23 @@ readonly class HandleBackofficeRequests
                     current: request()->routeIs('backoffice.dashboard.index'),
                 )
             )
-            ->addSidebarItem(new SidebarSeparator())
-            ->addSidebarItem(
-                new SidebarLink(
-                    text: __('Categorías'),
-                    href: route('backoffice.categories.index'),
-                    iconComponent: Heroicons::TAG,
-                    current: request()->routeIs('backoffice.categories.index'),
-                )
-            )
-            ->addSidebarItem(
-                new SidebarLink(
-                    text:__('Tipos de lección'),
-                    href: route('backoffice.lesson_types.index'),
-                    iconComponent: Heroicons::CALENDAR,
-                    current: request()->routeIs('backoffice.lesson_types.index'),
-                )
-            )
+            // ->addSidebarItem(new SidebarSeparator())
+            // ->addSidebarItem(
+            //     new SidebarLink(
+            //         text: __('Categorías'),
+            //         href: route('backoffice.categories.index'),
+            //         iconComponent: Heroicons::TAG,
+            //         current: request()->routeIs('backoffice.categories.index'),
+            //     )
+            // )
+            // ->addSidebarItem(
+            //     new SidebarLink(
+            //         text:__('Tipos de lección'),
+            //         href: route('backoffice.lesson_types.index'),
+            //         iconComponent: Heroicons::CALENDAR,
+            //         current: request()->routeIs('backoffice.lesson_types.index'),
+            //     )
+            // )
             ->addSidebarItem(new SidebarSeparator())
             ->addSidebarItem(
                 new SidebarLink(

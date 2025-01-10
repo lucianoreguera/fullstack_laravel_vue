@@ -1,5 +1,9 @@
 <?php
 
+pest()->extend(Tests\DuskTestCase::class)
+//  ->use(Illuminate\Foundation\Testing\DatabaseMigrations::class)
+    ->in('Browser');
+
 /*
 |--------------------------------------------------------------------------
 | Test Case
@@ -10,6 +14,8 @@
 | need to change it using the "pest()" function to bind a different classes or traits.
 |
 */
+
+use Tests\TestCase;
 
 pest()->extend(Tests\TestCase::class)
     ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
@@ -41,7 +47,13 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
+function asAdmin(): TestCase
 {
-    // ..
+    $user = \App\Models\User::factory()->create([
+        'is_admin' => true,
+        'is_active' => true,
+        'email_verified_at' => now(),
+    ]);
+
+    return test()->actingAs($user);
 }
